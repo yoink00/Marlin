@@ -362,7 +362,13 @@ bool target_direction;
   float delta[3] = { 0 };
   #define SIN_60 0.8660254037844386
   #define COS_60 0.5
-  float endstop_adj[3] = { 0 };
+  // StuW: Added to allow configuration of endstop adjustments
+  #if ENABLED(ALLOW_ENDSTOP_OFFSET)
+    float endstop_adj[3] = { ENDSTOP_OFFSET_X, ENDSTOP_OFFSET_Y, ENDSTOP_OFFSET_Z };
+  #else
+    float endstop_adj[3] = { 0 };
+  #endif
+
   // these are the default values, can be overriden with M665
   float delta_radius = DELTA_RADIUS;
   float delta_tower1_x = -SIN_60 * (delta_radius + DELTA_RADIUS_TRIM_TOWER_1); // front left tower
