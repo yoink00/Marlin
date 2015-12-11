@@ -323,7 +323,7 @@ Here are some standard links for getting your machine calibrated:
 // StuW: Set endstop offsets from calibration
 #define ALLOW_ENDSTOP_OFFSET
 #define ENDSTOP_OFFSET_X 101.0
-#define ENDSTOP_OFFSET_Y 116
+#define ENDSTOP_OFFSET_Y 116.0
 #define ENDSTOP_OFFSET_Z 0.0
 
 #if ENABLED(DELTA)
@@ -450,7 +450,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #define Y_HOME_DIR 1
 #define Z_HOME_DIR 1
 
-// StuW: As per the Micromake firmware
+// StuW: Changed from Micromake firmware
 #define min_software_endstops false // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
